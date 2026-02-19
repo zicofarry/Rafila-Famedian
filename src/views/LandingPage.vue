@@ -69,6 +69,7 @@ onMounted(() => {
 }
 
 .landing__text-section {
+  position: relative; /* Required for absolute child */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -87,8 +88,15 @@ onMounted(() => {
   color: var(--color-black);
   max-width: 400px;
   line-height: 1.6;
-  /* Align with "About" nav link */
-  margin-left: calc(50vw - var(--content-offset));
+  /* Align with "About" nav link using absolute positioning to avoid flex gap issues */
+  position: absolute;
+  top: 30px; /* Aligns with padding top */
+  left: calc(50vw - var(--content-offset));
+  
+  margin-left: 110px; 
+  
+  margin-top: 0;
+  margin-bottom: 0;
   margin-right: 0;
 }
 
