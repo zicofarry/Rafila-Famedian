@@ -64,7 +64,7 @@
 .contact__footer {
   margin-top: 100px;
   padding-left: calc(50vw - var(--content-offset));
-  max-width: 1050px;
+  max-width: 1000px;
 }
 
 .contact__footer-text {

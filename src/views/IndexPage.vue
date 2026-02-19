@@ -78,27 +78,24 @@ const goToProject = (idx) => {
   /* Calculated alignment: 50vw - half_of_navbar_buttons_width (approx 135px) */
   /* Aligned with Navbar 'About' using global variable */
   margin-left: calc(50vw - var(--content-offset)); 
-  max-width: 800px;
+  max-width: 450px;
 }
 
 .index-page__row {
   display: grid;
   grid-template-columns: 80px 1fr 1fr 50px; 
   gap: 15px;
-  padding: 6px 0;
+  padding: 4px 0;
   cursor: pointer;
   align-items: baseline;
   transition: opacity var(--transition-fast);
-}
-
-.index-page__row:hover {
-  opacity: 0.5;
+  border-bottom: 2px dotted #ccc; /* Underline the whole row instead of connectors */
 }
 
 .index-page__col {
   font-size: 11px; 
   color: var(--color-black); 
-  font-weight: 500;
+  font-weight: 800;
   white-space: nowrap;
   display: flex;
   align-items: baseline;
@@ -108,15 +105,12 @@ const goToProject = (idx) => {
 
 .index-page__col--name {
   color: var(--color-black);
-  font-weight: 600;
+  font-weight: 800;
 }
 
+/* Dots removed as requested */
 .index-page__dots {
-  flex: 1;
-  border-bottom: 1px dotted #ccc;
-  margin-left: 8px;
-  position: relative;
-  top: -4px;
+  display: none; 
 }
 .index-page__col--year .index-page__dots {
   display: none;

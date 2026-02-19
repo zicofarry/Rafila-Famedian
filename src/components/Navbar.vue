@@ -66,7 +66,7 @@
 
 .navbar__link {
   font-size: var(--font-size-base);
-  font-weight: 500;
+  font-weight: 730;
   color: var(--color-black);
   transition: color var(--transition-fast);
 }
