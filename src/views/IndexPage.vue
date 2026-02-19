@@ -7,10 +7,24 @@
         :key="idx"
         @click="goToProject(idx)"
       >
-        <span class="index-page__number">{{ String(idx + 1).padStart(3, '0') }}/{{ String(projects.length).padStart(3, '0') }}</span>
-        <span class="index-page__name">{{ project.name }}</span>
-        <span class="index-page__category">{{ project.category }}</span>
-        <span class="index-page__year">{{ project.year }}</span>
+        <div class="index-page__col index-page__col--number">
+          {{ String(idx + 1).padStart(3, '0') }}/{{ String(projects.length).padStart(3, '0') }}
+          <span class="index-page__dots"></span>
+        </div>
+        
+        <div class="index-page__col index-page__col--name">
+          {{ project.name }}
+          <span class="index-page__dots"></span>
+        </div>
+
+        <div class="index-page__col index-page__col--category">
+          {{ project.category }}
+          <span class="index-page__dots"></span>
+        </div>
+
+        <div class="index-page__col index-page__col--year">
+          {{ project.year }}
+        </div>
       </div>
     </div>
 
@@ -57,69 +71,70 @@ const goToProject = (idx) => {
 
 <style scoped>
 .index-page {
-  padding-top: calc(var(--nav-height) + 40px);
+  padding-top: calc(var(--nav-height) + 30px);
 }
 
 .index-page__table {
-  max-width: 700px;
-  margin: 0 auto;
+  /* Calculated alignment: 50vw - half_of_navbar_buttons_width (approx 135px) */
+  /* Aligned with Navbar 'About' using global variable */
+  margin-left: calc(50vw - var(--content-offset)); 
+  max-width: 800px;
 }
 
 .index-page__row {
   display: grid;
-  grid-template-columns: 80px 140px 1fr 60px;
-  gap: 16px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--color-border);
-  align-items: center;
+  grid-template-columns: 80px 1fr 1fr 50px; 
+  gap: 15px;
+  padding: 6px 0;
   cursor: pointer;
+  align-items: baseline;
   transition: opacity var(--transition-fast);
 }
 
 .index-page__row:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
-.index-page__row:first-child {
-  border-top: 1px solid var(--color-border);
-}
-
-.index-page__number {
-  font-size: var(--font-size-sm);
-  color: var(--color-black);
+.index-page__col {
+  font-size: 11px; 
+  color: var(--color-black); 
   font-weight: 500;
-  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  overflow: hidden;
 }
 
-.index-page__name {
-  font-size: var(--font-size-sm);
-  color: var(--color-orange);
+.index-page__col--name {
+  color: var(--color-black);
   font-weight: 600;
 }
 
-.index-page__category {
-  font-size: var(--font-size-sm);
-  color: var(--color-black);
-  font-weight: 400;
+.index-page__dots {
+  flex: 1;
+  border-bottom: 1px dotted #ccc;
+  margin-left: 8px;
+  position: relative;
+  top: -4px;
+}
+.index-page__col--year .index-page__dots {
+  display: none;
 }
 
-.index-page__year {
-  font-size: var(--font-size-sm);
-  color: var(--color-black);
-  font-weight: 400;
-  text-align: right;
+.index-page__col--year {
+  justify-content: flex-end;
 }
 
 .index-page__footer {
-  margin-top: 60px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 40px;
+  margin-left: calc(50vw - var(--content-offset)); /* Align with table */
+  max-width: 450px;
 }
 
 .index-page__footer-text {
-  font-size: var(--font-size-sm);
-  color: var(--color-orange);
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
   line-height: 1.7;
 }
 </style>

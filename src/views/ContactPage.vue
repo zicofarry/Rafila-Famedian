@@ -38,12 +38,12 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-left: 30%;
+  padding-left: calc(50vw - var(--content-offset));
 }
 
 .contact__item {
   font-size: var(--font-size-xl);
-  font-weight: 600;
+  font-weight: 450;
   color: var(--color-black);
   line-height: 1.5;
   display: block;
@@ -58,18 +58,18 @@
 }
 
 .contact__label {
-  color: var(--color-orange);
+  color: var(--color-black);
 }
 
 .contact__footer {
   margin-top: 100px;
-  padding-left: 30%;
-  max-width: 700px;
+  padding-left: calc(50vw - var(--content-offset));
+  max-width: 1050px;
 }
 
 .contact__footer-text {
   font-size: var(--font-size-sm);
-  color: var(--color-orange);
+  color: var(--color-black);
   line-height: 1.7;
 }
 </style>

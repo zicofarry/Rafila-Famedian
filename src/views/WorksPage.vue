@@ -74,7 +74,7 @@ const projects = [
     credits: 'Rafila Famedian\nReza Firdaus',
     description: 'Rimbun is a bakery and café brand rooted in the warmth of artisan bread-making. The visual identity draws from organic textures and earthy tones, reflecting the brand\'s commitment to natural ingredients and a welcoming atmosphere. Every design element, from the logotype to the packaging, is crafted to evoke a sense of comfort and authenticity.',
     descriptionExtra: 'The project encompassed brand strategy, logo design, packaging systems, environmental graphics, and social media templates. Working closely with the founders, we developed a visual language that bridges traditional craftsmanship with contemporary design sensibility.',
-    image: null // Will be populated with generated image
+    image: null
   },
   {
     name: 'Tanirra',
@@ -238,15 +238,12 @@ const showRightHint = ref(false)
 const currentProject = computed(() => projects[currentIndex.value])
 
 onMounted(() => {
-  // Check if coming from index page with a specific project
   if (route.query.project !== undefined) {
     const idx = parseInt(route.query.project)
     if (idx >= 0 && idx < projects.length) {
       currentIndex.value = idx
     }
   }
-
-  // Mouse move handler for cursor hints
   window.addEventListener('mousemove', handleMouseMove)
 })
 
@@ -280,12 +277,13 @@ const handleClick = (e) => {
 
 .works__layout {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 1fr 300px;
   min-height: calc(100vh - var(--nav-height));
 }
 
 .works__media {
-  padding: 20px;
+  padding: 10px;
+  padding-left: var(--page-padding-x);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -294,7 +292,7 @@ const handleClick = (e) => {
 
 .works__media-inner {
   width: 100%;
-  height: calc(100vh - var(--nav-height) - 40px);
+  height: calc(100vh - var(--nav-height) - 20px);
 }
 
 .works__image {
@@ -326,7 +324,7 @@ const handleClick = (e) => {
 }
 
 .works__details {
-  padding: 30px 40px;
+  padding: 20px 24px;
   display: flex;
   align-items: flex-start;
 }
@@ -336,43 +334,43 @@ const handleClick = (e) => {
 }
 
 .works__number {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-black);
   font-weight: 500;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--color-border);
 }
 
 .works__info {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .works__category {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--color-black);
 }
 
 .works__name {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: var(--color-blue);
-}
-
-.works__year {
   font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--color-black);
-  margin-bottom: 24px;
+}
+
+.works__year {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 20px;
 }
 
 .works__credits {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .works__credits-label {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-black);
   font-weight: 600;
   white-space: pre-line;
@@ -380,18 +378,18 @@ const handleClick = (e) => {
 }
 
 .works__description {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .works__description p,
 .works__description-extra p {
-  font-size: var(--font-size-sm);
-  color: var(--color-orange);
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
   line-height: 1.7;
 }
 
 .works__description-extra {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 /* Navigation hints */
@@ -418,41 +416,25 @@ const handleClick = (e) => {
   right: 30px;
 }
 
-/* Slide fade transition for media */
-.slide-fade-enter-active {
-  transition: all 0.4s ease-out;
-}
-
+/* Slide fade transition for media (opacity only) */
+.slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.3s ease-in;
+  transition: opacity 0.35s ease;
 }
 
-.slide-fade-enter-from {
-  opacity: 0;
-  transform: translateX(20px);
-}
-
+.slide-fade-enter-from,
 .slide-fade-leave-to {
   opacity: 0;
-  transform: translateX(-20px);
 }
 
-/* Detail fade transition */
-.detail-fade-enter-active {
-  transition: all 0.4s ease-out;
-}
-
+/* Detail fade transition (opacity only) */
+.detail-fade-enter-active,
 .detail-fade-leave-active {
-  transition: all 0.3s ease-in;
+  transition: opacity 0.35s ease;
 }
 
-.detail-fade-enter-from {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
+.detail-fade-enter-from,
 .detail-fade-leave-to {
   opacity: 0;
-  transform: translateY(-10px);
 }
 </style>

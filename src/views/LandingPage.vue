@@ -65,7 +65,7 @@ onMounted(() => {
 }
 
 .landing__hero {
-  height: 30vh;
+  height: 40vh;
 }
 
 .landing__text-section {
@@ -73,7 +73,6 @@ onMounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px var(--page-padding-x);
-  gap: 80px;
 }
 
 .landing__disclaimer {
@@ -88,19 +87,22 @@ onMounted(() => {
   color: var(--color-black);
   max-width: 400px;
   line-height: 1.6;
+  /* Align with "About" nav link */
+  margin-left: calc(50vw - var(--content-offset));
+  margin-right: 0;
 }
 
 /* Experimental Visual - Fluid Blobs */
 .landing__visual {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
   overflow: hidden;
 }
 
 .landing__visual-canvas {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 300px;
   background: var(--color-white);
   overflow: hidden;
 }

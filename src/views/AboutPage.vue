@@ -74,7 +74,7 @@ const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-left: 30%;
+  padding-left: calc(50vw - var(--content-offset));
 }
 
 .about__skill {
@@ -85,7 +85,7 @@ const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
 
 .about__skill-number {
   font-size: var(--font-size-xs);
-  color: var(--color-orange);
+  color: var(--color-pink);
   font-weight: 500;
   vertical-align: super;
   position: relative;
@@ -115,7 +115,7 @@ const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
   display: flex;
   gap: 60px;
   margin-top: 80px;
-  padding-left: 30%;
+  padding-left: calc(50vw - var(--content-offset));
   padding-right: 10%;
 }
 
