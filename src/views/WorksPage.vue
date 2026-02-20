@@ -141,15 +141,6 @@ const projects = [
     image: null
   },
   {
-    name: 'Dualogue',
-    category: 'Visual Identity',
-    year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity for Dualogue, a collaborative design studio emphasizing dialogue-driven creative processes.',
-    descriptionExtra: null,
-    image: null
-  },
-  {
     name: 'Umbira',
     category: 'Visual Identity',
     year: 2025,

@@ -1,4 +1,21 @@
 /* ============================================
+   FONTS
+   ============================================ */
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('./assets/Font/AlteHaasGroteskRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('./assets/Font/AlteHaasGroteskBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ============================================
    GLOBAL STYLES — RAFILA FAMEDIAN PORTFOLIO
    ============================================ */
 
@@ -160,8 +177,9 @@ button {
     --page-padding-x: 20px;
     --page-padding-y: 40px;
     --nav-height: auto;
-    --content-offset: 0px; /* Reset offset for mobile center alignment */
-    
+    --content-offset: 0px;
+    /* Reset offset for mobile center alignment */
+
     /* Adjusted font sizes for small screens */
     --font-size-xs: 10px;
     --font-size-sm: 12px;
