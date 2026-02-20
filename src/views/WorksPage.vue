@@ -51,12 +51,12 @@
     </div>
 
     <!-- Cursor indicators -->
-    <div class="works__nav-hint works__nav-hint--left" :class="{ visible: showLeftHint }">
+    <!-- <div class="works__nav-hint works__nav-hint--left" :class="{ visible: showLeftHint }">
       ← Prev
     </div>
     <div class="works__nav-hint works__nav-hint--right" :class="{ visible: showRightHint }">
       Next →
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -253,16 +253,19 @@ onUnmounted(() => {
 
 const handleMouseMove = (e) => {
   const halfWidth = window.innerWidth / 2
-  showLeftHint.value = e.clientX < halfWidth && currentIndex.value > 0
-  showRightHint.value = e.clientX >= halfWidth && currentIndex.value < projects.length - 1
+  // Hints are always visible on their respective sides for infinite navigation
+  showLeftHint.value = e.clientX < halfWidth
+  showRightHint.value = e.clientX >= halfWidth
 }
 
 const handleClick = (e) => {
   const halfWidth = window.innerWidth / 2
-  if (e.clientX < halfWidth && currentIndex.value > 0) {
-    currentIndex.value--
-  } else if (e.clientX >= halfWidth && currentIndex.value < projects.length - 1) {
-    currentIndex.value++
+  if (e.clientX < halfWidth) {
+    // Loop back to end if at beginning
+    currentIndex.value = (currentIndex.value - 1 + projects.length) % projects.length
+  } else if (e.clientX >= halfWidth) {
+    // Loop back to beginning if at end
+    currentIndex.value = (currentIndex.value + 1) % projects.length
   }
 }
 </script>
@@ -339,7 +342,7 @@ const handleClick = (e) => {
   font-weight: 500;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px dotted #ccc; /* Updated to dotted to match Index page */
 }
 
 .works__info {
@@ -393,7 +396,7 @@ const handleClick = (e) => {
 }
 
 /* Navigation hints */
-.works__nav-hint {
+/* .works__nav-hint {
   position: fixed;
   bottom: 30px;
   font-size: var(--font-size-xs);
@@ -414,7 +417,7 @@ const handleClick = (e) => {
 
 .works__nav-hint--right {
   right: 30px;
-}
+} */
 
 /* Slide fade transition for media (opacity only) */
 .slide-fade-enter-active,

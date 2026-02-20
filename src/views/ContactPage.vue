@@ -5,10 +5,10 @@
       <a href="https://instagram.com/rbfamedian" target="_blank" class="contact__item contact__item--link">
         <span class="contact__label">(IG)</span> @rbfamedian
       </a>
-      <a href="https://behance.net/rafilafamedian" target="_blank" class="contact__item contact__item--link">
+      <a href="https://behance.net/rafilafamedian1" target="_blank" class="contact__item contact__item--link">
         <span class="contact__label">(Be)</span> Rafila Famedian
       </a>
-      <a href="tel:+628951796590" class="contact__item contact__item--link">
+      <a href="https://wa.me/+6289517965909" target="_blank" class="contact__item contact__item--link">
         <span class="contact__label">(TL)</span> +62 895-1796-5909
       </a>
       <a href="mailto:rafilafamedian99@gmail.com" class="contact__item contact__item--link">

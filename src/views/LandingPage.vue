@@ -18,44 +18,21 @@
       </p>
     </div>
 
-    <!-- Experimental Visual Section -->
+    <!-- Video Background Loop -->
     <div class="landing__visual">
-      <div class="landing__visual-canvas">
-        <div class="blob blob--1"></div>
-        <div class="blob blob--2"></div>
-        <div class="blob blob--3"></div>
-        <div class="blob blob--4"></div>
-        <div class="blob blob--5"></div>
-      </div>
+      <video autoplay loop muted playsinline class="landing__video">
+        <source src="/loop.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
-import gsap from 'gsap'
 
 onMounted(() => {
-  gsap.to('.blob--1', {
-    x: '+=40', y: '+=30', scale: 1.15,
-    duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut'
-  })
-  gsap.to('.blob--2', {
-    x: '-=50', y: '+=20', scale: 0.9,
-    duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut'
-  })
-  gsap.to('.blob--3', {
-    x: '+=30', y: '-=40', scale: 1.1,
-    duration: 7, repeat: -1, yoyo: true, ease: 'sine.inOut'
-  })
-  gsap.to('.blob--4', {
-    x: '-=35', y: '+=45', scale: 1.2,
-    duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut'
-  })
-  gsap.to('.blob--5', {
-    x: '+=25', y: '-=30', scale: 0.85,
-    duration: 5, repeat: -1, yoyo: true, ease: 'sine.inOut'
-  })
+  // Video handles its own autoplay
 })
 </script>
 
@@ -100,65 +77,21 @@ onMounted(() => {
   margin-right: 0;
 }
 
-/* Experimental Visual - Fluid Blobs */
+/* Video Visual */
 .landing__visual {
+  position: fixed; /* Fixed to cover bottom or specific area */
+  top: 70vh; /* Start halfway down the screen */
+  left: 0;
   width: 100%;
-  margin-top: 40px;
+  height: 30vh; /* Cover the remaining 30% */
   overflow: hidden;
+  z-index: -1; 
 }
 
-.landing__visual-canvas {
-  position: relative;
+.landing__video {
   width: 100%;
-  height: 300px;
-  background: var(--color-white);
-  overflow: hidden;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.85;
-}
-
-.blob--1 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, #b44dff 0%, #7a1fa0 40%, #5a0f8a 70%, transparent 100%);
-  top: -30px;
-  left: 20%;
-}
-
-.blob--2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #d76dff 0%, #9933cc 40%, #6b1f99 70%, transparent 100%);
-  top: 20px;
-  left: 40%;
-}
-
-.blob--3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, #e88dff 0%, #aa44dd 40%, #8822bb 70%, transparent 100%);
-  top: -60px;
-  left: 60%;
-}
-
-.blob--4 {
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, #c055ff 0%, #8833bb 40%, #661199 70%, transparent 100%);
-  top: 40px;
-  left: 10%;
-}
-
-.blob--5 {
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, #dd77ff 0%, #9944cc 40%, #7722aa 70%, transparent 100%);
-  top: -20px;
-  left: 75%;
+  height: 100%;
+  object-fit: fill; /* Forces video to stretch/squash to fill the area */
+  display: block;
 }
 </style>
