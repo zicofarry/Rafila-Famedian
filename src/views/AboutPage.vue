@@ -51,7 +51,7 @@ const skills = [
 
 <style scoped>
 .about {
-  padding-top: calc(var(--nav-height) + 50px);
+  padding-top: calc(var(--nav-height) + 80px);
 }
 
 .about__content {
@@ -123,5 +123,49 @@ const skills = [
   color: var(--color-black);
   line-height: 1.3;
   max-width: 390px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding-top: 40px;
+  }
+  
+  .about__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .about__skills {
+    padding-left: 0;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .about__skill {
+    justify-content: center;
+  }
+  
+  .about__skill-name {
+    font-size: var(--font-size-xl);
+  }
+  
+  .about__photo {
+    width: 140px;
+    order: -1; 
+  }
+  
+  .about__bio {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 40px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .about__bio-text {
+    max-width: 100%;
+    font-size: var(--font-size-sm);
+  }
 }
 </style>

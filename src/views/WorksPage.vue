@@ -49,14 +49,6 @@
         </Transition>
       </div>
     </div>
-
-    <!-- Cursor indicators -->
-    <!-- <div class="works__nav-hint works__nav-hint--left" :class="{ visible: showLeftHint }">
-      ← Prev
-    </div>
-    <div class="works__nav-hint works__nav-hint--right" :class="{ visible: showRightHint }">
-      Next →
-    </div> -->
   </div>
 </template>
 
@@ -136,6 +128,15 @@ const projects = [
     year: 2025,
     credits: 'Rafila Famedian',
     description: 'Comprehensive social media guidelines for The Underdog, establishing consistent visual communication across all digital platforms.',
+    descriptionExtra: null,
+    image: null
+  },
+  {
+    name: 'Dualogue',
+    category: 'Visual Identity',
+    year: 2025,
+    credits: 'Rafila Famedian',
+    description: 'Visual identity for Dualogue, a collaborative design studio emphasizing dialogue-driven creative processes.',
     descriptionExtra: null,
     image: null
   },
@@ -257,7 +258,6 @@ onUnmounted(() => {
 
 const handleMouseMove = (e) => {
   const halfWidth = window.innerWidth / 2
-  // Hints are always visible on their respective sides for infinite navigation
   showLeftHint.value = e.clientX < halfWidth
   showRightHint.value = e.clientX >= halfWidth
 }
@@ -265,10 +265,8 @@ const handleMouseMove = (e) => {
 const handleClick = (e) => {
   const halfWidth = window.innerWidth / 2
   if (e.clientX < halfWidth) {
-    // Loop back to end if at beginning
     currentIndex.value = (currentIndex.value - 1 + projects.length) % projects.length
   } else if (e.clientX >= halfWidth) {
-    // Loop back to beginning if at end
     currentIndex.value = (currentIndex.value + 1) % projects.length
   }
 }
@@ -276,16 +274,17 @@ const handleClick = (e) => {
 
 <style scoped>
 .works {
-  padding-top: var(--nav-height);
-  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + 50px);
+  height: 100vh;
+  overflow: hidden;
   cursor: pointer;
   user-select: none;
 }
 
 .works__layout {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  min-height: calc(100vh - var(--nav-height));
+  grid-template-columns: 3.3fr 1fr;
+  height: calc(100vh - (var(--nav-height) + 50px));
 }
 
 .works__media {
@@ -310,7 +309,7 @@ const handleClick = (e) => {
 
 .works__placeholder {
   width: 100%;
-  height: 100%;
+  height: 93%;
   background: #1a1a1a;
   display: flex;
   flex-direction: column;
@@ -346,7 +345,7 @@ const handleClick = (e) => {
   font-weight: 500;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px dotted #ccc; /* Updated to dotted to match Index page */
+  border-bottom: 2px dotted #ccc;
 }
 
 .works__info {
@@ -399,31 +398,6 @@ const handleClick = (e) => {
   margin-bottom: 16px;
 }
 
-/* Navigation hints */
-/* .works__nav-hint {
-  position: fixed;
-  bottom: 30px;
-  font-size: var(--font-size-xs);
-  color: var(--color-gray);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-  pointer-events: none;
-  z-index: 50;
-}
-
-.works__nav-hint.visible {
-  opacity: 1;
-}
-
-.works__nav-hint--left {
-  left: 30px;
-}
-
-.works__nav-hint--right {
-  right: 30px;
-} */
-
-/* Slide fade transition for media (opacity only) */
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: opacity 0.35s ease;
@@ -434,7 +408,6 @@ const handleClick = (e) => {
   opacity: 0;
 }
 
-/* Detail fade transition (opacity only) */
 .detail-fade-enter-active,
 .detail-fade-leave-active {
   transition: opacity 0.35s ease;
@@ -443,5 +416,43 @@ const handleClick = (e) => {
 .detail-fade-enter-from,
 .detail-fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .works {
+    padding-top: 40px;
+  }
+  
+  .works__layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+  
+  .works__media {
+    padding-left: var(--page-padding-x);
+    padding-right: var(--page-padding-x);
+    justify-content: center;
+  }
+  
+  .works__media-inner {
+    height: 45vh; 
+  }
+  
+  .works__details {
+    padding: 30px var(--page-padding-x);
+  }
+  
+  .works__number {
+    margin-bottom: 30px;
+  }
+  
+  .works__year, .works__credits {
+    margin-bottom: 25px;
+  }
+  
+  .works__name {
+    font-size: var(--font-size-lg);
+  }
 }
 </style>

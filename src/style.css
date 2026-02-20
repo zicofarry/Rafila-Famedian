@@ -151,3 +151,33 @@ button {
   transform: translate(-50%, -50%);
   /* Center the dot accurately */
 }
+
+/* ============================================
+   MOBILE STYLES (Responsive)
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --page-padding-x: 20px;
+    --page-padding-y: 40px;
+    --nav-height: auto;
+    --content-offset: 0px; /* Reset offset for mobile center alignment */
+    
+    /* Adjusted font sizes for small screens */
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-base: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 22px;
+    --font-size-2xl: 24px;
+  }
+
+  .custom-cursor-dot {
+    display: none !important;
+  }
+
+  .page-container {
+    padding-left: var(--page-padding-x);
+    padding-right: var(--page-padding-x);
+  }
+}

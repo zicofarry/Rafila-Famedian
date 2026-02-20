@@ -72,4 +72,24 @@
   color: var(--color-black);
   line-height: 1.3;
 }
+
+@media (max-width: 768px) {
+  .contact {
+    padding-top: 30px;
+  }
+  
+  .contact__info {
+    padding-left: 0;
+    gap: 15px;
+  }
+  
+  .contact__item {
+    font-size: var(--font-size-lg);
+  }
+  
+  .contact__footer {
+    padding-left: 0;
+    margin-top: 50px;
+  }
+}
 </style>

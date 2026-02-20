@@ -71,29 +71,31 @@ const goToProject = (idx) => {
 
 <style scoped>
 .index-page {
-  padding-top: calc(var(--nav-height) + 30px);
+  padding-top: calc(var(--nav-height) + 70px);
+  height: 100vh;
+  overflow: hidden;
 }
 
 .index-page__table {
   /* Calculated alignment: 50vw - half_of_navbar_buttons_width (approx 135px) */
   /* Aligned with Navbar 'About' using global variable */
   margin-left: calc(50vw - var(--content-offset)); 
-  max-width: 450px;
+  max-width: 430px;
 }
 
 .index-page__row {
   display: grid;
   grid-template-columns: 80px 1fr 1fr 50px; 
   gap: 15px;
-  padding: 4px 0;
+  padding: 7px 0 0px 0; /* More space on top, dots closer to text on bottom */
   cursor: pointer;
   align-items: baseline;
   transition: opacity var(--transition-fast);
-  border-bottom: 2px dotted #ccc; /* Underline the whole row instead of connectors */
+  border-bottom: 2px dotted #ccc;
 }
 
 .index-page__col {
-  font-size: 11px; 
+  font-size: 11px; /* Slightly smaller font */
   color: var(--color-black); 
   font-weight: 800;
   white-space: nowrap;
@@ -101,6 +103,8 @@ const goToProject = (idx) => {
   align-items: baseline;
   width: 100%;
   overflow: hidden;
+  line-height: 1.3; /* Shrinks the text container from within */
+  transform: translateY(1.8px); /* Physically moves text down towards the border */
 }
 
 .index-page__col--name {
@@ -121,14 +125,43 @@ const goToProject = (idx) => {
 }
 
 .index-page__footer {
-  margin-top: 40px;
+  margin-top: 30px; /* Reduced margin */
   margin-left: calc(50vw - var(--content-offset)); /* Align with table */
   max-width: 450px;
 }
 
 .index-page__footer-text {
-  font-size: var(--font-size-xs);
+  font-size: 11px;
   color: var(--color-black);
-  line-height: 1.7;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .index-page {
+    padding-top: 40px;
+    height: auto; /* Allow scroll on mobile */
+    overflow: visible;
+  }
+  
+  .index-page__table {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .index-page__row {
+    grid-template-columns: 45px 1fr 40px; 
+    gap: 8px;
+    padding: 6px 0; /* More padding for mobile touch */
+  }
+  
+  .index-page__col--category {
+    display: none;
+  }
+  
+  .index-page__footer {
+    margin-left: 0;
+    max-width: 100%;
+    margin-top: 30px;
+  }
 }
 </style>

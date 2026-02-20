@@ -94,4 +94,39 @@ onMounted(() => {
   object-fit: fill; /* Forces video to stretch/squash to fill the area */
   display: block;
 }
+
+@media (max-width: 768px) {
+  .landing {
+    padding-top: 20px;
+  }
+  
+  .landing__hero {
+    height: 20vh;
+  }
+  
+  .landing__text-section {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px var(--page-padding-x);
+  }
+  
+  .landing__disclaimer, .landing__description {
+    position: static;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .landing__description {
+    font-size: var(--font-size-base);
+  }
+
+  .landing__visual {
+    top: auto;
+    bottom: 0;
+    position: relative;
+    height: 40vh;
+    margin-top: 40px;
+  }
+}
 </style>
