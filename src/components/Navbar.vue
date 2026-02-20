@@ -45,8 +45,9 @@
 
 
 .navbar__logo {
-  font-size: 25px;
-  font-weight: 900;
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-family-display);
+  font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--color-pink);
   text-transform: uppercase;
@@ -60,13 +61,13 @@
 
 .navbar__links {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
 }
 
 .navbar__link {
-  font-size: var(--font-size-base);
-  font-weight: 730;
+  font-size: var(--font-size-md);
+  font-weight: 700;
   color: var(--color-black);
   transition: color var(--transition-fast);
 }
@@ -80,7 +81,7 @@
 }
 
 .navbar__copyright {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   color: var(--color-black);
   font-weight: 400;
   white-space: nowrap;

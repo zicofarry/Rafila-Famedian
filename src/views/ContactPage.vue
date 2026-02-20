@@ -68,7 +68,7 @@
 }
 
 .contact__footer-text {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-black);
   line-height: 1.7;
 }

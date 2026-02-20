@@ -337,7 +337,7 @@ const handleClick = (e) => {
 }
 
 .works__number {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   color: var(--color-black);
   font-weight: 500;
   margin-bottom: 20px;
@@ -350,19 +350,19 @@ const handleClick = (e) => {
 }
 
 .works__category {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: 700;
   color: var(--color-black);
 }
 
 .works__name {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: 700;
   color: var(--color-black);
 }
 
 .works__year {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   font-weight: 700;
   color: var(--color-black);
   margin-bottom: 20px;
@@ -373,7 +373,7 @@ const handleClick = (e) => {
 }
 
 .works__credits-label {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   color: var(--color-black);
   font-weight: 600;
   white-space: pre-line;
@@ -386,7 +386,7 @@ const handleClick = (e) => {
 
 .works__description p,
 .works__description-extra p {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   color: var(--color-black);
   line-height: 1.7;
 }

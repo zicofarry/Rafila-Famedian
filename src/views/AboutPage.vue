@@ -47,15 +47,8 @@ const skills = [
   'Creative Direction'
 ]
 
-// Placeholder portrait — will be replaced with actual photo
-const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="340" viewBox="0 0 260 340">
-  <rect width="260" height="340" fill="#222"/>
-  <circle cx="130" cy="120" r="55" fill="#444"/>
-  <ellipse cx="130" cy="280" rx="75" ry="90" fill="#444"/>
-  <text x="130" y="330" text-anchor="middle" fill="#888" font-family="Manrope, sans-serif" font-size="11">Portrait Photo</text>
-</svg>
-`))
+// Actual profile photo
+const portraitUrl = ref('/profile.png')
 </script>
 
 <style scoped>
@@ -100,13 +93,14 @@ const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
 }
 
 .about__photo {
-  width: 200px;
+  width: 168px;
+  height: 224px;
   flex-shrink: 0;
 }
 
 .about__photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
   filter: grayscale(100%);
   object-fit: cover;
 }

@@ -50,18 +50,18 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 30px var(--page-padding-x);
+  padding: 80px var(--page-padding-x);
 }
 
 .landing__disclaimer {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   color: var(--color-gray);
   max-width: 280px;
   line-height: 1.5;
 }
 
 .landing__description {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-black);
   max-width: 400px;
   line-height: 1.6;

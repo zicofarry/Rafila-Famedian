@@ -71,7 +71,7 @@ const goToProject = (idx) => {
 
 <style scoped>
 .index-page {
-  padding-top: calc(var(--nav-height) + 30px);
+  padding-top: calc(var(--nav-height) + 80px);
 }
 
 .index-page__table {
@@ -93,7 +93,7 @@ const goToProject = (idx) => {
 }
 
 .index-page__col {
-  font-size: 11px; 
+  font-size: var(--font-size-base); 
   color: var(--color-black); 
   font-weight: 800;
   white-space: nowrap;
@@ -127,7 +127,7 @@ const goToProject = (idx) => {
 }
 
 .index-page__footer-text {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   color: var(--color-black);
   line-height: 1.7;
 }
