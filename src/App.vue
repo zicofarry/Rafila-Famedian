@@ -22,8 +22,8 @@ const moveCursor = (e) => {
     gsap.to(cursorDot.value, {
       x: e.clientX,
       y: e.clientY,
-      duration: 0.1,  
-      ease: 'power2.out'
+      duration: 1,  
+      ease: 'power3.out'
     })
   }
 }

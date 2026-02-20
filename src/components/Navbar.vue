@@ -45,9 +45,10 @@
 
 
 .navbar__logo {
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-family: 'Alte Haas Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 700; /* Bold */
+  letter-spacing: -0.01em;
   color: var(--color-pink);
   text-transform: uppercase;
   white-space: nowrap;

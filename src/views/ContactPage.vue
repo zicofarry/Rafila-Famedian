@@ -6,7 +6,7 @@
         <span class="contact__label">(IG)</span> @rbfamedian
       </a>
       <a href="https://behance.net/rafilafamedian1" target="_blank" class="contact__item contact__item--link">
-        <span class="contact__label">(Be)</span> Rafila Famedian
+        <span class="contact__label">(Bē)</span> Rafila Famedian
       </a>
       <a href="https://wa.me/+6289517965909" target="_blank" class="contact__item contact__item--link">
         <span class="contact__label">(TL)</span> +62 895-1796-5909
@@ -62,14 +62,14 @@
 }
 
 .contact__footer {
-  margin-top: 100px;
+  margin-top: 40px;
   padding-left: calc(50vw - var(--content-offset));
-  max-width: 1000px;
+  max-width: 980px;
 }
 
 .contact__footer-text {
   font-size: var(--font-size-sm);
   color: var(--color-black);
-  line-height: 1.7;
+  line-height: 1.3;
 }
 </style>

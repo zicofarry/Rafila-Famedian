@@ -4,14 +4,14 @@
       <!-- Skills List -->
       <div class="about__skills">
         <div class="about__skill" v-for="(skill, index) in skills" :key="index">
-          <span class="about__skill-number">{{ String(index + 1).padStart(2, '0') }}</span>
+          <span class="about__skill-number">{{ index + 1 }}</span>
           <span class="about__skill-name">{{ skill }}</span>
         </div>
       </div>
 
       <!-- Portrait Photo -->
       <div class="about__photo">
-        <img :src="portraitUrl" alt="Rafila Famedian" />
+        <img src="/profile.png" alt="Rafila Famedian" />
       </div>
     </div>
 
@@ -47,15 +47,6 @@ const skills = [
   'Creative Direction'
 ]
 
-// Placeholder portrait — will be replaced with actual photo
-const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="340" viewBox="0 0 260 340">
-  <rect width="260" height="340" fill="#222"/>
-  <circle cx="130" cy="120" r="55" fill="#444"/>
-  <ellipse cx="130" cy="280" rx="75" ry="90" fill="#444"/>
-  <text x="130" y="330" text-anchor="middle" fill="#888" font-family="Manrope, sans-serif" font-size="11">Portrait Photo</text>
-</svg>
-`))
 </script>
 
 <style scoped>
@@ -84,45 +75,53 @@ const portraitUrl = ref('data:image/svg+xml,' + encodeURIComponent(`
 }
 
 .about__skill-number {
-  font-size: var(--font-size-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--color-pink);
+  border-radius: 100%;
+  font-size: 9px;
   color: var(--color-pink);
-  font-weight: 500;
-  vertical-align: super;
+  flex-shrink: 0;
   position: relative;
-  top: -8px;
+  top: -12px;
 }
 
 .about__skill-name {
   font-size: var(--font-size-2xl);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-black);
-  line-height: 1.3;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .about__photo {
-  width: 200px;
+  width: 168px;
   flex-shrink: 0;
 }
 
 .about__photo img {
   width: 100%;
-  height: auto;
-  filter: grayscale(100%);
+  aspect-ratio: 3 / 4; /* Portrait 3x4 */
   object-fit: cover;
+  object-position: 40% center; /* Adjust this percentage to shift the photo left/right */
 }
 
 .about__bio {
   display: flex;
-  gap: 60px;
-  margin-top: 80px;
+  flex-direction: column; /* Stacked paragraphs */
+  gap: 20px; /* Adjusted gap for vertical stack */
+  margin-top: 30px;
   padding-left: calc(50vw - var(--content-offset));
   padding-right: 10%;
 }
 
 .about__bio-text {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-black);
-  line-height: 1.7;
-  max-width: 420px;
+  line-height: 1.3;
+  max-width: 390px;
 }
 </style>

@@ -231,19 +231,23 @@ const projects = [
   },
 ]
 
-const currentIndex = ref(0)
+const getInitialIndex = () => {
+  if (route.query.project !== undefined) {
+    const idx = parseInt(route.query.project)
+    if (idx >= 0 && idx < projects.length) {
+      return idx
+    }
+  }
+  return 0
+}
+
+const currentIndex = ref(getInitialIndex())
 const showLeftHint = ref(false)
 const showRightHint = ref(false)
 
 const currentProject = computed(() => projects[currentIndex.value])
 
 onMounted(() => {
-  if (route.query.project !== undefined) {
-    const idx = parseInt(route.query.project)
-    if (idx >= 0 && idx < projects.length) {
-      currentIndex.value = idx
-    }
-  }
   window.addEventListener('mousemove', handleMouseMove)
 })
 
@@ -295,7 +299,7 @@ const handleClick = (e) => {
 
 .works__media-inner {
   width: 100%;
-  height: calc(100vh - var(--nav-height) - 20px);
+  height: calc(100vh - var(--nav-height) - 60px);
 }
 
 .works__image {

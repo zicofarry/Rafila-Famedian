@@ -14,9 +14,9 @@
 :root {
   /* Colors */
   --color-pink: #ff48ee;
-  --color-black: #1a1a1a;
+  --color-black: #141414;
   --color-white: #ffffff;
-  --color-gray: #999999;
+  --color-gray: #aaaaaa;
   --color-light-gray: #f5f5f5;
   --color-border: #e0e0e0;
 
@@ -135,4 +135,19 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #999;
+}
+
+/* Custom Cursor Follower */
+.custom-cursor-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  /* Center the dot accurately */
 }
