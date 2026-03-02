@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar" :class="{ 'navbar--open': isMenuOpen }">
     <router-link to="/" class="navbar__logo" @click="closeMenu">
-      <span class="navbar__logo-desktop">REPOSITORY. ARCHIVE. 25-26</span>
-      <span class="navbar__logo-mobile">REPOSITORY</span>
+      <span class="navbar__logo-desktop">ARCHIVE / REPOSITORY<br><span class="navbar__logo-year">25 — 26</span></span>
+      <span class="navbar__logo-mobile">ARCHIVE / REPOSITORY</span>
     </router-link>
 
     <!-- Mobile Toggle -->
@@ -58,7 +58,7 @@ const closeMenu = () => {
 
 <style scoped>
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -85,6 +85,13 @@ const closeMenu = () => {
   text-transform: uppercase;
   white-space: nowrap;
   transition: opacity var(--transition-fast);
+  line-height: 1.1;
+}
+
+.navbar__logo-year {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 .navbar__logo-mobile { display: none; }
@@ -144,6 +151,7 @@ const closeMenu = () => {
   font-weight: 730;
   color: var(--color-black);
   transition: color var(--transition-fast);
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23ff48ee' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer;
 }
 
 .navbar__link:hover, .navbar__link.active {

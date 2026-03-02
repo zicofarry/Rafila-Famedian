@@ -50,15 +50,16 @@
 }
 
 .contact__item--link {
-  transition: opacity var(--transition-fast);
+  transition: color var(--transition-fast);
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23ff48ee' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer;
 }
 
 .contact__item--link:hover {
-  opacity: 0.6;
+  color: var(--color-pink);
 }
 
 .contact__label {
-  color: var(--color-black);
+  color: inherit;
 }
 
 .contact__footer {

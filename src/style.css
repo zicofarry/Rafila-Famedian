@@ -154,19 +154,41 @@ button {
   background: #999;
 }
 
-/* Custom Cursor Follower */
-.custom-cursor-dot {
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-pink);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  /* Center the dot accurately */
+/* ============================================
+   CUSTOM CURSORS
+   ============================================ */
+
+/* Default cursor: small pink filled dot (12x12) */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%23ff48ee'/%3E%3C/svg%3E") 6 6, auto;
+}
+
+/* Pointer cursor: larger pink outline circle (24x24) for clickable elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.index-page__row,
+.navbar__link,
+.navbar__logo,
+.contact__item--link {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23ff48ee' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+/* Text cursor: pink I-beam vertical line */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+[contenteditable="true"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='20'%3E%3Cline x1='4' y1='0' x2='4' y2='20' stroke='%23ff48ee' stroke-width='2'/%3E%3Cline x1='1' y1='0' x2='7' y2='0' stroke='%23ff48ee' stroke-width='1.5'/%3E%3Cline x1='1' y1='20' x2='7' y2='20' stroke='%23ff48ee' stroke-width='1.5'/%3E%3C/svg%3E") 4 10, text;
+}
+
+/* Pause cursor: hide default, [PAUSE] text rendered by WorksPage div */
+.cursor-pause,
+.cursor-pause * {
+  cursor: none !important;
 }
 
 /* ============================================
@@ -190,8 +212,9 @@ button {
     --font-size-2xl: 24px;
   }
 
-  .custom-cursor-dot {
-    display: none !important;
+  /* Reset to default cursor on mobile/touch */
+  * {
+    cursor: auto;
   }
 
   .page-container {

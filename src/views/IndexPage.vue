@@ -47,20 +47,20 @@ const projects = [
   { name: 'Rimbun', category: 'Visual Identity', year: 2026 },
   { name: 'Tanirra', category: 'Visual Identity', year: 2026 },
   { name: 'Mandala', category: 'Vernacular Typeface', year: 2026 },
+  { name: 'Aloev', category: 'Environmental Design', year: 2025 },
   { name: 'Bikasoga', category: 'Visual Identity', year: 2025 },
   { name: 'Atklub', category: 'Social Media Kickstart', year: 2025 },
   { name: 'Stiluso', category: 'Brand Identity', year: 2025 },
   { name: 'Lemarbel', category: 'Brand Identity', year: 2025 },
-  { name: 'The Underdog', category: 'Social Media Guideline', year: 2025 },
-  { name: 'Dualogue', category: 'Visual Identity', year: 2025 },
+  { name: 'Cass Up', category: 'Event Identity', year: 2025 },
   { name: 'Umbira', category: 'Visual Identity', year: 2025 },
-  { name: 'Aloev', category: 'Environmental Design', year: 2025 },
-  { name: 'Courtaste', category: 'Visual Identity', year: 2025 },
+  { name: 'Dualoque', category: 'Visual Identity', year: 2025 },
   { name: 'Bona', category: 'Visual Identity', year: 2025 },
-  { name: 'Bru', category: 'Visual Identity', year: 2025 },
-  { name: 'Cass up!', category: 'Event Identity', year: 2025 },
+  { name: 'The Underdog Podcast', category: 'Social Media Guideline', year: 2025 },
   { name: 'BFM 3.0', category: 'Event Identity', year: 2025 },
+  { name: 'Bru', category: 'Visual Identity', year: 2025 },
   { name: 'Zenki', category: 'Visual Identity', year: 2025 },
+  { name: 'Courtaste', category: 'Visual Identity', year: 2025 },
   { name: 'Tachi', category: 'Social Media Kickstart', year: 2025 },
 ]
 
@@ -88,10 +88,18 @@ const goToProject = (idx) => {
   grid-template-columns: 80px 1fr 1fr 50px; 
   gap: 15px;
   padding: 7px 0 0px 0; /* More space on top, dots closer to text on bottom */
-  cursor: pointer;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23ff48ee' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer;
   align-items: baseline;
-  transition: opacity var(--transition-fast);
+  transition: color var(--transition-fast);
   border-bottom: 2px dotted #ccc;
+}
+
+.index-page__row:hover {
+  color: var(--color-pink);
+}
+
+.index-page__row:hover .index-page__col {
+  color: var(--color-pink);
 }
 
 .index-page__col {
@@ -105,6 +113,7 @@ const goToProject = (idx) => {
   overflow: hidden;
   line-height: 1.3; /* Shrinks the text container from within */
   transform: translateY(1.8px); /* Physically moves text down towards the border */
+  transition: color var(--transition-fast);
 }
 
 .index-page__col--name {
