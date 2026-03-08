@@ -48,14 +48,15 @@
   --font-size-2xl: 32px;
   --font-size-3xl: 36px;
 
-  /* Spacing */
-  --nav-height: 60px;
-  --page-padding-x: 40px;
-  --page-padding-y: 30px;
-  --content-max-width: 1400px;
+  /* 12-Column Grid System */
+  --grid-columns: 12;
+  --grid-margin: 80px;
+  --grid-gutter: 24px;
 
-  /* Offset for alignment - adjust this to move content Left/Right relative to Navbar 'About' link */
-  --content-offset: 188px;
+  /* Spacing (derived from grid) */
+  --nav-height: 80px;
+  --page-padding-x: var(--grid-margin);
+  --page-padding-y: 30px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -102,6 +103,19 @@ button {
 }
 
 /* ============================================
+   12-COLUMN GRID UTILITY
+   ============================================ */
+.grid-page {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0 var(--grid-gutter);
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+  min-height: calc(100vh - var(--nav-height));
+  padding-top: calc(var(--nav-height) + 40px);
+}
+
+/* ============================================
    PAGE TRANSITION ANIMATIONS (opacity only)
    ============================================ */
 .page-fade-enter-active,
@@ -126,8 +140,6 @@ button {
   min-height: calc(100vh - var(--nav-height));
   padding: 40px var(--page-padding-x);
   padding-top: calc(var(--nav-height) + 40px);
-  max-width: var(--content-max-width);
-  margin: 0 auto;
 }
 
 /* Selection color */
@@ -165,13 +177,16 @@ button {
 
 /* Pointer cursor: larger pink outline circle (24x24) for clickable elements */
 a,
+a *,
 button,
 [role="button"],
 input[type="submit"],
 input[type="button"],
 .index-page__row,
+.index-page__row *,
 .navbar__link,
 .navbar__logo,
+.navbar__logo *,
 .contact__item--link {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23ff48ee' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer;
 }
@@ -192,15 +207,26 @@ textarea,
 }
 
 /* ============================================
-   MOBILE STYLES (Responsive)
+   TABLET STYLES (768px – 1279px)
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 1279px) and (min-width: 768px) {
   :root {
-    --page-padding-x: 20px;
-    --page-padding-y: 40px;
-    --nav-height: auto;
-    --content-offset: 0px;
-    /* Reset offset for mobile center alignment */
+    --grid-columns: 8;
+    --grid-margin: 40px;
+    --grid-gutter: 20px;
+    --nav-height: 60px;
+  }
+}
+
+/* ============================================
+   MOBILE STYLES (<768px)
+   ============================================ */
+@media (max-width: 767px) {
+  :root {
+    --grid-columns: 4;
+    --grid-margin: 20px;
+    --grid-gutter: 16px;
+    --nav-height: 60px;
 
     /* Adjusted font sizes for small screens */
     --font-size-xs: 10px;
@@ -218,7 +244,13 @@ textarea,
   }
 
   .page-container {
-    padding-left: var(--page-padding-x);
-    padding-right: var(--page-padding-x);
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin);
+  }
+
+  .grid-page {
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin);
   }
 }

@@ -485,17 +485,20 @@ const handleClick = (e) => {
 
 .works__layout {
   display: grid;
-  grid-template-columns: 3.3fr 1fr;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0 var(--grid-gutter);
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
   min-height: calc(100vh - (var(--nav-height) + 50px));
 }
 
 .works__media {
-  padding: 10px;
-  padding-left: var(--page-padding-x);
+  grid-column: 1 / 10;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
+  padding: 10px 0;
 }
 
 .works__media-inner {
@@ -537,7 +540,8 @@ const handleClick = (e) => {
 }
 
 .works__details {
-  padding: 20px 24px;
+  grid-column: 10 / 13;
+  padding: 20px 0;
   display: flex;
   align-items: flex-start;
 }
@@ -636,39 +640,60 @@ const handleClick = (e) => {
   opacity: 0;
 }
 
-@media (max-width: 768px) {
+/* ============================================
+   TABLET (768px – 1279px)
+   ============================================ */
+@media (max-width: 1279px) and (min-width: 768px) {
   .works {
-    padding-top: 40px;
+    padding-top: calc(var(--nav-height) + 30px);
   }
-  
+
+  .works__media {
+    grid-column: 1 / 6;
+  }
+
+  .works__details {
+    grid-column: 6 / 9;
+    padding: 10px 0;
+  }
+}
+
+/* ============================================
+   MOBILE (<768px)
+   ============================================ */
+@media (max-width: 767px) {
+  .works {
+    padding-top: calc(var(--nav-height) + 20px);
+  }
+
   .works__layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     min-height: auto;
     padding-bottom: 60px;
   }
-  
+
   .works__media {
-    padding-left: var(--page-padding-x);
-    padding-right: var(--page-padding-x);
+    padding: 0;
     justify-content: center;
   }
-  
+
   .works__media-inner {
-    height: 45vh; 
+    height: 45vh;
   }
-  
+
   .works__details {
-    padding: 30px var(--page-padding-x);
+    padding: 30px 0;
   }
-  
+
   .works__number {
     margin-bottom: 30px;
   }
-  
+
   .works__year, .works__credits {
     margin-bottom: 25px;
   }
-  
+
   .works__name {
     font-size: var(--font-size-lg);
   }

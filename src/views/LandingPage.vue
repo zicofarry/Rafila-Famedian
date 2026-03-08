@@ -3,7 +3,7 @@
     <!-- Hero section - large white space -->
     <div class="landing__hero"></div>
 
-    <!-- Text section -->
+    <!-- Text section using 12-column grid -->
     <div class="landing__text-section">
       <p class="landing__disclaimer">
         external mockups and visual assets are utilized for simulation purposes. all rights and
@@ -45,44 +45,33 @@ onMounted(() => {
 }
 
 .landing__text-section {
-  position: relative; /* Required for absolute child */
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px var(--page-padding-x);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0 var(--grid-gutter);
+  padding: 30px var(--grid-margin);
 }
 
 .landing__disclaimer {
+  grid-column: 1 / 5;
   font-size: var(--font-size-xs);
   color: var(--color-gray);
-  max-width: 280px;
   line-height: 1.5;
 }
 
 .landing__description {
+  grid-column: 6 / 10;
   font-size: var(--font-size-sm);
   color: var(--color-black);
-  max-width: 400px;
   line-height: 1.6;
-  /* Align with "About" nav link using absolute positioning to avoid flex gap issues */
-  position: absolute;
-  top: 30px; /* Aligns with padding top */
-  left: calc(50vw - var(--content-offset));
-  
-  margin-left: 110px; 
-  
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 0;
 }
 
 /* Video Visual */
 .landing__visual {
-  position: fixed; /* Fixed to cover bottom or specific area */
-  top: 70vh; /* Start halfway down the screen */
+  position: fixed;
+  top: 70vh;
   left: 0;
   width: 100%;
-  height: 30vh; /* Cover the remaining 30% */
+  height: 30vh;
   overflow: hidden;
   z-index: -1; 
 }
@@ -90,11 +79,37 @@ onMounted(() => {
 .landing__video {
   width: 100%;
   height: 100%;
-  object-fit: fill; /* Forces video to stretch/squash to fill the area */
+  object-fit: fill;
   display: block;
 }
 
-@media (max-width: 768px) {
+/* ============================================
+   TABLET (768px – 1279px)
+   ============================================ */
+@media (max-width: 1279px) and (min-width: 768px) {
+  .landing__hero {
+    height: 30vh;
+  }
+
+  .landing__disclaimer {
+    grid-column: 1 / 4;
+  }
+
+  .landing__description {
+    grid-column: 4 / 9;
+  }
+
+  .landing__visual {
+    top: auto;
+    bottom: 0;
+    height: 45vh;
+  }
+}
+
+/* ============================================
+   MOBILE (<768px)
+   ============================================ */
+@media (max-width: 767px) {
   .landing {
     padding-top: 20px;
   }
@@ -104,15 +119,14 @@ onMounted(() => {
   }
   
   .landing__text-section {
+    display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px var(--page-padding-x);
+    padding: 20px var(--grid-margin);
   }
   
   .landing__disclaimer, .landing__description {
-    position: static;
     max-width: 100%;
-    margin: 0;
     text-align: left;
   }
 
@@ -123,9 +137,7 @@ onMounted(() => {
   .landing__visual {
     top: auto;
     bottom: 0;
-    position: relative;
-    height: 40vh;
-    margin-top: 40px;
+    height: 35vh;
   }
 }
 </style>

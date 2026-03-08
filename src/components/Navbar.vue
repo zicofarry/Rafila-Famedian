@@ -2,7 +2,7 @@
   <nav class="navbar" :class="{ 'navbar--open': isMenuOpen }">
     <router-link to="/" class="navbar__logo" @click="closeMenu">
       <span class="navbar__logo-desktop">ARCHIVE / REPOSITORY<br><span class="navbar__logo-year">25 — 26</span></span>
-      <span class="navbar__logo-mobile">ARCHIVE / REPOSITORY</span>
+      <img class="navbar__logo-mobile" src="/rafila.svg" alt="Rafila Famedian" />
     </router-link>
 
     <!-- Mobile Toggle -->
@@ -23,15 +23,11 @@
       </div>
 
       <div class="navbar__mobile-footer" v-if="isMenuOpen">
-        <div class="navbar__mobile-copyright">
-          ©2026 Rafila Famedian
-        </div>
+        <div class="navbar__mobile-copyright">©2026 Rafila Famedian</div>
       </div>
     </div>
 
-    <div class="navbar__copyright">
-      ©2026 Rafila Famedian
-    </div>
+    <div class="navbar__copyright">©2026 Rafila Famedian</div>
   </nav>
 </template>
 
@@ -42,12 +38,7 @@ const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
-  // Prevent scrolling when menu is open
-  if (isMenuOpen.value) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
-  }
+  document.body.style.overflow = isMenuOpen.value ? 'hidden' : ''
 }
 
 const closeMenu = () => {
@@ -57,6 +48,9 @@ const closeMenu = () => {
 </script>
 
 <style scoped>
+/* ============================================
+   DESKTOP (≥1280px): 12-column grid navbar
+   ============================================ */
 .navbar {
   position: absolute;
   top: 0;
@@ -64,19 +58,16 @@ const closeMenu = () => {
   right: 0;
   z-index: 1000;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 20px var(--page-padding-x) 0 var(--page-padding-x);
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0 var(--grid-gutter);
+  align-items: start;
+  padding: 35px var(--grid-margin) 0 var(--grid-margin);
   background-color: var(--color-white);
   height: var(--nav-height);
-  transition: background-color 0.3s ease;
 }
 
-.navbar__logo { justify-self: start; }
-.navbar__links { justify-self: center; margin-left: 100px; }
-.navbar__copyright { justify-self: end; }
-
 .navbar__logo {
+  grid-column: 1 / 5;
   font-family: 'Alte Haas Grotesk', sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -84,8 +75,7 @@ const closeMenu = () => {
   color: var(--color-pink);
   text-transform: uppercase;
   white-space: nowrap;
-  transition: opacity var(--transition-fast);
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .navbar__logo-year {
@@ -105,7 +95,6 @@ const closeMenu = () => {
   padding: 10px;
 }
 
-/* Hamburger Styles */
 .hamburger {
   width: 24px;
   height: 18px;
@@ -127,18 +116,17 @@ const closeMenu = () => {
 .navbar__toggle--active .hamburger__line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
-
 .navbar__toggle--active .hamburger__line:nth-child(2) {
   opacity: 0;
 }
-
 .navbar__toggle--active .hamburger__line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 
 .navbar__links {
+  grid-column: 6 / 10;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .navbar__links-container {
@@ -151,7 +139,6 @@ const closeMenu = () => {
   font-weight: 730;
   color: var(--color-black);
   transition: color var(--transition-fast);
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23ff48ee' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer;
 }
 
 .navbar__link:hover, .navbar__link.active {
@@ -159,57 +146,70 @@ const closeMenu = () => {
 }
 
 .navbar__copyright {
+  grid-column: 11 / 13;
   font-size: var(--font-size-sm);
   color: var(--color-black);
   font-weight: 400;
   white-space: nowrap;
+  justify-self: end;
 }
 
-@media (max-width: 768px) {
+.navbar__mobile-footer { display: none; }
+
+/* ============================================
+   TABLET + MOBILE (<1280px)
+   ============================================ */
+@media (max-width: 1279px) {
   .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 60px;
-    padding: 0 var(--page-padding-x);
+    padding: 0 var(--grid-margin);
     background-color: var(--color-white);
   }
 
   .navbar__logo-desktop { display: none; }
-  .navbar__logo-mobile { display: inline; font-size: 20px; }
-  
-  .navbar__toggle {
+  .navbar__logo-mobile {
     display: block;
+    height: 28px;
+    width: auto;
   }
+
+  .navbar__toggle { display: block; }
 
   .navbar__links {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0;
-    margin: 0;
+    align-items: flex-start;
+    padding: 80px var(--grid-margin);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
-    padding: 80px var(--page-padding-x);
   }
 
   .navbar__links--open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .navbar__links-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     align-items: flex-start;
     width: 100%;
   }
@@ -231,18 +231,9 @@ const closeMenu = () => {
   }
 
   .navbar__mobile-footer {
+    display: block;
     margin-top: auto;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    transition-delay: 0.4s;
-  }
-
-  .navbar__links--open .navbar__mobile-footer {
-    opacity: 1;
   }
 
   .navbar__mobile-copyright {
@@ -252,8 +243,6 @@ const closeMenu = () => {
     letter-spacing: 0.05em;
   }
 
-  .navbar__copyright {
-    display: none;
-  }
+  .navbar__copyright { display: none; }
 }
 </style>

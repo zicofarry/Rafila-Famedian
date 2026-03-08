@@ -1,6 +1,6 @@
 <template>
-  <div class="about page-container">
-    <div class="about__content">
+  <div class="about">
+    <div class="about__grid">
       <!-- Skills List -->
       <div class="about__skills">
         <div class="about__skill" v-for="(skill, index) in skills" :key="index">
@@ -13,23 +13,23 @@
       <div class="about__photo">
         <img src="/profile.png" alt="Rafila Famedian" />
       </div>
-    </div>
 
-    <!-- Bio Section -->
-    <div class="about__bio">
-      <p class="about__bio-text">
-        my name is rafila billy famedian. practicing visual communication based in bandung,
-        indonesia. my approach centers on responding to narratives through a systematic,
-        humanistic and reflective process. i position myself as a collaborative partner, who
-        prioritizing value of the architecture of a project as much as its final output.
-      </p>
-      <p class="about__bio-text">
-        my practice is centered around core disciplines to helping brands and individuals find their
-        voice through distinct visual identity systems. i find rhythm in editorial design where content
-        meets structure and occasionally explore type design to give words a specific resonance.
-        ultimately, my role is to provide creative direction, to translating raw ideas into an intentional
-        vision.
-      </p>
+      <!-- Bio Section -->
+      <div class="about__bio">
+        <p class="about__bio-text">
+          my name is rafila billy famedian. practicing visual communication based in bandung,
+          indonesia. my approach centers on responding to narratives through a systematic,
+          humanistic and reflective process. i position myself as a collaborative partner, who
+          prioritizing value of the architecture of a project as much as its final output.
+        </p>
+        <p class="about__bio-text">
+          my practice is centered around core disciplines to helping brands and individuals find their
+          voice through distinct visual identity systems. i find rhythm in editorial design where content
+          meets structure and occasionally explore type design to give words a specific resonance.
+          ultimately, my role is to provide creative direction, to translating raw ideas into an intentional
+          vision.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -50,20 +50,22 @@ const skills = [
 <style scoped>
 .about {
   padding-top: calc(var(--nav-height) + 80px);
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+  min-height: 100vh;
 }
 
-.about__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0 var(--grid-gutter);
 }
 
 .about__skills {
+  grid-column: 6 / 10;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-left: calc(50vw - var(--content-offset));
 }
 
 .about__skill {
@@ -96,24 +98,24 @@ const skills = [
 }
 
 .about__photo {
-  width: 168px;
-  flex-shrink: 0;
+  grid-column: 11 / 13;
+  grid-row: 1;
+  width: 100%;
 }
 
 .about__photo img {
   width: 100%;
-  aspect-ratio: 3 / 4; /* Portrait 3x4 */
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: 40% center; /* Adjust this percentage to shift the photo left/right */
+  object-position: 40% center;
 }
 
 .about__bio {
+  grid-column: 6 / 10;
   display: flex;
-  flex-direction: column; /* Stacked paragraphs */
-  gap: 20px; /* Adjusted gap for vertical stack */
+  flex-direction: column;
+  gap: 20px;
   margin-top: 30px;
-  padding-left: calc(50vw - var(--content-offset));
-  padding-right: 10%;
 }
 
 .about__bio-text {
@@ -123,44 +125,70 @@ const skills = [
   max-width: 390px;
 }
 
-@media (max-width: 768px) {
+/* ============================================
+   TABLET (768px – 1279px)
+   ============================================ */
+@media (max-width: 1279px) and (min-width: 768px) {
   .about {
-    padding-top: 40px;
+    padding-top: calc(var(--nav-height) + 60px);
   }
-  
-  .about__content {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  
+
   .about__skills {
-    padding-left: 0;
-    width: 100%;
-    align-items: center;
+    grid-column: 3 / 7;
   }
-  
-  .about__skill {
-    justify-content: center;
+
+  .about__photo {
+    grid-column: 7 / 9;
   }
-  
+
+  .about__bio {
+    grid-column: 3 / 7;
+  }
+
   .about__skill-name {
     font-size: var(--font-size-xl);
   }
-  
+}
+
+/* ============================================
+   MOBILE (<768px)
+   ============================================ */
+@media (max-width: 767px) {
+  .about {
+    padding-top: calc(var(--nav-height) + 40px);
+  }
+
+  .about__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
   .about__photo {
     width: 140px;
-    order: -1; 
+    order: -1;
   }
-  
+
+  .about__skills {
+    width: 100%;
+    align-items: center;
+  }
+
+  .about__skill {
+    justify-content: center;
+  }
+
+  .about__skill-name {
+    font-size: var(--font-size-xl);
+  }
+
   .about__bio {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 40px;
+    margin-top: 10px;
     text-align: center;
     align-items: center;
   }
-  
+
   .about__bio-text {
     max-width: 100%;
     font-size: var(--font-size-sm);
