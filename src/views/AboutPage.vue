@@ -18,19 +18,17 @@
     <!-- Bio Section -->
     <div class="about__bio">
       <p class="about__bio-text">
-        my name is rafila billy famedian. currently navigating my way through visual
-        communication in bandung. for me, design is less about imposing a style and
-        more about responding to narratives through a thoughtful, reflective
-        process. i value the journey as much as the result, positioning myself as a
-        collaborative partner who listens and contributes to every project's essential.
+        my name is rafila billy famedian. practicing visual communication based in bandung,
+        indonesia. my approach centers on responding to narratives through a systematic,
+        humanistic and reflective process. i position myself as a collaborative partner, who
+        prioritizing value of the architecture of a project as much as its final output.
       </p>
       <p class="about__bio-text">
-        my practice is centered around core disciplines. i help brands and individuals
-        find their voice through graphic design and the development of distinct
-        visual identity systems. i also find rhythm in editorial design, where content
-        meets structure, and occasionally explore the craft of type design to give
-        words a specific resonance. ultimately, i am here to provide creative
-        direction. to connecting raw ideas into a finished, intentional vision.
+        my practice is centered around core disciplines to helping brands and individuals find their
+        voice through distinct visual identity systems. i find rhythm in editorial design where content
+        meets structure and occasionally explore type design to give words a specific resonance.
+        ultimately, my role is to provide creative direction, to translating raw ideas into an intentional
+        vision.
       </p>
     </div>
   </div>

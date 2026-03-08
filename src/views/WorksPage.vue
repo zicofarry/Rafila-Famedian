@@ -73,6 +73,10 @@
             <div class="works__description-extra" v-if="currentProject.descriptionExtra">
               <p>{{ currentProject.descriptionExtra }}</p>
             </div>
+
+            <div class="works__keywords" v-if="currentProject.keywords">
+              <p>{{ currentProject.keywords }}</p>
+            </div>
           </div>
         </Transition>
       </div>
@@ -92,8 +96,9 @@ const projects = [
     category: 'Visual Identity',
     year: 2026,
     credits: 'Rafila Famedian\nReza Firdaus',
-    description: 'Rimbun is a bakery and café brand rooted in the warmth of artisan bread-making. The visual identity draws from organic textures and earthy tones, reflecting the brand\'s commitment to natural ingredients and a welcoming atmosphere. Every design element, from the logotype to the packaging, is crafted to evoke a sense of comfort and authenticity.',
-    descriptionExtra: 'The project encompassed brand strategy, logo design, packaging systems, environmental graphics, and social media templates. Working closely with the founders, we developed a visual language that bridges traditional craftsmanship with contemporary design sensibility.',
+    description: 'responding to the need for a sanctuary within a dense urban landscape, this project explores a visual identity rooted in the brand\'s organic essence. the application of bread fiber textures as a primary key visual aims to establish a grounded, homey atmosphere. the resulting system serves as a visual \'pause\', aligning material inspired elements with the bakery\'s core philosophy.',
+    descriptionExtra: null,
+    keywords: 'Visual Identity System, Packaging Design, Environmental Design',
     media: [
       { type: 'image', src: '/Works/Rimbun/01.png' },
       { type: 'image', src: '/Works/Rimbun/02.png' },
@@ -107,9 +112,10 @@ const projects = [
     name: 'Tanirra',
     category: 'Visual Identity',
     year: 2026,
-    credits: 'Rafila Famedian',
-    description: 'A comprehensive visual identity system for Tanirra, a modern wellness brand focused on holistic self-care products. The design language balances minimalism with organic warmth.',
+    credits: 'Rafila Famedian\nReza Firdaus',
+    description: 'this visual identity attempts to translate the ethereal qualities of balinese floral scents into a tangible brand system. by utilizing heritage inspired color palettes and flower centric key visuals, the design maintains a strong sense of place and tradition. the project focuses on inheriting cultural nuances while positioning the fragrance within a modern, inherited tone and manner.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Packaging Design, Editorial Design',
     media: [
       { type: 'image', src: '/Works/Tanirra/1.png' },
       { type: 'image', src: '/Works/Tanirra/2.png' },
@@ -123,9 +129,10 @@ const projects = [
     name: 'Mandala',
     category: 'Vernacular Typeface',
     year: 2026,
-    credits: 'Rafila Famedian',
-    description: 'Mandala is a vernacular typeface project exploring the intersection of traditional Sundanese script elements with contemporary type design principles.',
+    credits: 'Rafila Famedian\nIgnatius Soekarno',
+    description: 'derived from the spiritual philosophies and protective symbolism of balinese gringsing fabric, this project explores the construction of a modern vernacular typeface. the design respects the original motifs while adapting their geometry for contemporary editorial use. the intervention seeks to bridge traditional spiritual narratives with modern typographic requirements through a thoughtful editorial implementation.',
     descriptionExtra: null,
+    keywords: 'Typeface, Vernacular Implementation, Editorial Design',
     media: [
       { type: 'image', src: '/Works/Mandala/1.png' },
       { type: 'image', src: '/Works/Mandala/2.png' },
@@ -138,9 +145,10 @@ const projects = [
     name: 'Aloev',
     category: 'Environmental Design',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Environmental design project for Aloev, integrating brand identity elements into physical spaces and wayfinding systems.',
+    credits: 'Vevaldy Yusuf\nEldhie Rutfi\nPutri Qori\nIsan Nurfaisal\nRafila Famedian',
+    description: 'contribute as design support for aloev\'s 10th anniversary celebration, the task involved translating the studio\'s interior ethos into a cohesive exhibition identity. the process focused on the execution of environmental graphics, including curatorial wall texts and editorial layouts. the intervention ensures a consistent visual tone that honors the studio\'s decade long practice.',
     descriptionExtra: null,
+    keywords: 'Environmental Design, Exhibition, Editorial Design',
     media: [
       { type: 'video', src: '/Works/Aloev/1.mov' },
     ]
@@ -149,9 +157,10 @@ const projects = [
     name: 'Bikasoga',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity system for Bikasoga, a cultural heritage brand celebrating traditional Sundanese textile patterns and craftsmanship.',
+    credits: 'Rafila Famedian\nYasmin Aulia',
+    description: 'addressing a visual identity that had become disconnected from contemporary relevance, this project explores a sensitive modernization of an established community brand. the approach focuses on preserving the recognizable core essence while introducing refined visual treatments. the goal was to maintain familiarity for the existing community while subtly broadening appeal for a newer demographic.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Environmental Design, Social Media Kickstart',
     media: [
       { type: 'image', src: '/Works/Bikasoga/1.png' },
       { type: 'image', src: '/Works/Bikasoga/2.png' },
@@ -166,9 +175,10 @@ const projects = [
     name: 'Atklub',
     category: 'Social Media Kickstart',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Social media kickstart package for Atklub, establishing their digital presence with cohesive visual templates and content strategy.',
+    credits: 'Vevaldy Yusuf\nYasmin Aulia\nIsan Nurfaisal\nRafila Famedian',
+    description: 'this project focuses on the practical translation of a visual identity system into a social media kickstart. the execution involves interpreting existing guidelines into specific digital layouts, consistent copywriting, and a unified instagram tone of voice. the objective was to ensure the brand\'s visual \'spirit\' remains cohesive and functional across high-speed social media touchpoints.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Social Media Guideline, Social Media Kickstart',
     media: [
       { type: 'image', src: '/Works/Atklub/1.png' },
       { type: 'image', src: '/Works/Atklub/2.png' },
@@ -180,9 +190,10 @@ const projects = [
     name: 'Stiluso',
     category: 'Brand Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Complete brand identity development for Stiluso, a contemporary fashion label focusing on sustainable streetwear.',
+    credits: 'Vevaldy Yusuf\nAndry Januaris\nEldhie Rutfi\nPutri Qori\nRafila Famedian',
+    description: 'the project focuses on documenting a leather brand\'s visual identity into a comprehensive guideline system. by standardizing the application of visual elements and social media treatments, the archive provides a disciplined framework for long term use. the result is a consolidated manual that ensures visual consistency across physical and digital touchpoints.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Brand Guideline, Social Media Guideline',
     media: [
       { type: 'video', src: '/Works/Stiluso/01.mov' },
     ]
@@ -191,9 +202,10 @@ const projects = [
     name: 'Lemarbel',
     category: 'Brand Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Brand identity for Lemarbel, a specialty marble and stone supplier. The design system reflects the material\'s natural elegance.',
+    credits: 'Aditya Krisna\nVevaldy Yusuf\nPutri Qori\nRafila Famedian',
+    description: 'consolidating the visual identity of a padel court and studio into a structured brand manual. the archive defines the parameters for visual usage, from physical media applications to systematic social media environments. this framework serves as a technical reference to maintain the brand\'s visual integrity within its specialized community.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Brand Guideline, Environmental Design',
     media: [
       { type: 'image', src: '/Works/Lemarbel/1.png' },
       { type: 'image', src: '/Works/Lemarbel/2.png' },
@@ -204,12 +216,13 @@ const projects = [
     ]
   },
   {
-    name: 'Cass Up',
+    name: 'Cass Up!',
     category: 'Event Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Event identity for Cass Up, a youth-driven music and cultural festival in Bandung.',
+    credits: 'Rafi Naufal\nRafila Famedian\nJessica Daniela\nAdzikra Baskara\nParamitha Agustin',
+    description: 'addressing the urgency of food security through the lens of diversification, this campaign identity centers on cassava as a sustainable local resource. the design employs a visual tone and messaging strategy specifically tailored to engage a younger demographic. the outcome is an efficient communication system that bridges local agricultural urgency with contemporary audience relevance.',
     descriptionExtra: null,
+    keywords: 'Event Identity System, Sustainable Campaign, Social Media Kickstart',
     media: [
       { type: 'video', src: '/Works/Cass Up!/01.mov' },
     ]
@@ -218,9 +231,10 @@ const projects = [
     name: 'Umbira',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity development for Umbira, a botanical skincare line inspired by Indonesian herbal traditions.',
+    credits: 'Vevaldy Yusuf\nYasmin Aulia\nAndry Januaris\nAlif Ramadhan\nRafila Famedian',
+    description: 'a rebranding project tasked with transitioning a minimalist aesthetic into a vibrant, maximalist illustrative language. the intervention sought to refresh the coffee brand\'s image in response to client needs while preserving its core essence. the shift provides a more spirited and dynamic visual dialogue without disconnecting from the brand\'s established roots.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Packaging Design, Environmental Design',
     media: [
       { type: 'image', src: '/Works/Umbira/1.png' },
       { type: 'image', src: '/Works/Umbira/2.png' },
@@ -232,9 +246,10 @@ const projects = [
     name: 'Dualoque',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity for Dualoque, a collaborative design studio emphasizing dialogue-driven creative processes.',
+    credits: 'Vevaldy Yusuf\nYasmin Aulia\nEldhie Rutfi\nRafila Famedian',
+    description: 'translating the philanthropic spirit of a wellness hub into an empathetic visual identity system. the design focuses on the core narrative of human connectivity and the fundamental necessity of being heard. the resulting social media framework ensures that digital interactions remain consistent with the brand\'s supportive and reflective essence.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Editorial Design, Social Media Kickstart',
     media: [
       { type: 'image', src: '/Works/Dualoque/1.png' },
       { type: 'image', src: '/Works/Dualoque/2.png' },
@@ -246,9 +261,10 @@ const projects = [
     name: 'Bona',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity system for Bona, a lifestyle brand focused on mindful living and sustainable consumer goods.',
+    credits: 'Putri Qori\nEldhie Rutfi\nYasmin Aulia\nNaufal Farras\nRafila Famedian',
+    description: 'an exploration of integrating visual identity into environmental graphic design, with a primary focus on custom illustrations. the challenge involved developing a prestigious art style that remains consistent with the brasserie\'s core identity. this integration creates a cohesive atmospheric experience where physical space and visual narratives are intentionally aligned.',
     descriptionExtra: null,
+    keywords: 'Environmental Design, Illustration, Editorial Design',
     media: [
       { type: 'image', src: '/Works/Bona/1.png' },
       { type: 'image', src: '/Works/Bona/2.png' },
@@ -261,9 +277,10 @@ const projects = [
     name: 'The Underdog Podcast',
     category: 'Social Media Guideline',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Comprehensive social media guidelines for The Underdog Podcast, establishing consistent visual communication across all digital platforms.',
+    credits: 'Shani Nur M.\nVevaldy Yusuf\nNaufal Farras\nRafila Famedian',
+    description: 'this project focuses on the practical translation of a visual identity system into a social media kickstart. the execution involves interpreting existing guidelines into specific digital layouts, consistent copywriting, and a unified instagram tone of voice. the objective was to ensure the brand\'s visual \'spirit\' remains cohesive and functional across high-speed social media touchpoints.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Social Media Guideline, Social Media Kickstart',
     media: [
       { type: 'video', src: '/Works/The Underdog/01.mov' },
     ]
@@ -272,9 +289,10 @@ const projects = [
     name: 'BFM 3.0',
     category: 'Event Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Event identity design for BFM 3.0, the third iteration of a creative industry forum and exhibition.',
+    credits: 'Aqil Maulana\nRavie Rachman\nBila Andisha\nVicky Uniqa\nIkaa Putri\nGilang\nRafila Famedian',
+    description: 'contributing to the development of an event identity for the bandung flea market, this project aims to reflect the youth driven spirit of responsible consumption. the process focused on translating community values into a visual system that cultivates a sustainable culture. the resulting identity serves as a structured framework for a community-driven movement.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Photography, Packaging Design',
     media: [
       { type: 'image', src: '/Works/BFM 3.0/1.png' },
     ]
@@ -283,18 +301,20 @@ const projects = [
     name: 'Bru',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity for Bru, a specialty coffee roaster celebrating the craft of bean-to-cup coffee culture.',
+    credits: 'Dian Purba\nVevaldy Yusuf\nRafila Famedian',
+    description: 'acting as design support for a coffee roastery, the task involved developing product and packaging systems, including can designs. the approach sought to merge informative product data with a refined aesthetic to ensure both functional clarity and visual appeal. the intervention provides a balanced experience where utility and form are intentionally aligned.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Packaging Design, Product Design',
     media: []
   },
   {
     name: 'Zenki',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity for Zenki, a modern Japanese-inspired dining concept emphasizing minimalism and attention to detail.',
+    credits: 'Rafila Famedian\nNada Syarifah',
+    description: 'exploring the duality of relaxation and positive energy, this project develops a visual identity and product system for a matcha based brand. the design draws inspiration from zen stone characteristics to translate inner peace into a tangible brand experience. the resulting identity acts as a visual conduit for a relaxed, yet energized lifestyle.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Packaging Design, Editorial Design',
     media: [
       { type: 'image', src: '/Works/Zenki/1.png' },
       { type: 'image', src: '/Works/Zenki/2.png' },
@@ -307,18 +327,20 @@ const projects = [
     name: 'Courtaste',
     category: 'Visual Identity',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Visual identity for Courtaste, a premium food court concept combining diverse culinary experiences under one cohesive brand.',
+    credits: 'Shani Nur\nEldhie Rutfi\nPutri Qori\nRafila Famedian',
+    description: 'navigating the concept of \'home\' within yogyakarta\'s urban landscape, this project explores a modern identity for a padel court and cafe. the design intentionally avoids traditional ornaments in favor of a contemporary aesthetic that still retains the city\'s welcoming essence. the outcome is a relevant visual system that resonates with modern urban demographics without losing its domestic warmth.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Editorial Design, Environmental Design',
     media: []
   },
   {
     name: 'Tachi',
     category: 'Social Media Kickstart',
     year: 2025,
-    credits: 'Rafila Famedian',
-    description: 'Social media kickstart for Tachi, building a strong digital foundation with branded templates and content direction.',
+    credits: 'Rafila Famedian\nErma Ramdayani',
+    description: 'this project focuses on the practical translation of a visual identity system into a social media kickstart. the execution involves interpreting existing guidelines into specific digital layouts, consistent copywriting, and a unified instagram tone of voice. the objective was to ensure the brand\'s visual \'spirit\' remains cohesive and functional across high-speed social media touchpoints.',
     descriptionExtra: null,
+    keywords: 'Visual Identity System, Social Media Guideline, Social Media Kickstart',
     media: [
       { type: 'image', src: '/Works/Tachi/01.png' },
     ]
@@ -581,6 +603,17 @@ const handleClick = (e) => {
 
 .works__description-extra {
   margin-bottom: 16px;
+}
+
+.works__keywords {
+  margin-bottom: 16px;
+}
+
+.works__keywords p {
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  line-height: 1.7;
+  font-style: italic;
 }
 
 .slide-fade-enter-active,

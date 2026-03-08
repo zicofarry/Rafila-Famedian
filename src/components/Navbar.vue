@@ -89,8 +89,8 @@ const closeMenu = () => {
 }
 
 .navbar__logo-year {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 700;
   letter-spacing: 0.05em;
 }
 

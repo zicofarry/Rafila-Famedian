@@ -6,15 +6,14 @@
     <!-- Text section -->
     <div class="landing__text-section">
       <p class="landing__disclaimer">
-        some mockup photographs are used for illustrative purpose only.
-        i do not own the rights to these images, all copyrights belong to their
-        respective creators.
+        external mockups and visual assets are utilized for simulation purposes. all rights and
+        copyrights belong to their respective creators.
       </p>
       <p class="landing__description">
-        this is rafila famedian's visual archive. a recapitulation of selected processes
-        and projects developed between 2025 and 2026. the collection functions as
-        a technical documentation of my practice, focusing on the construction of
-        graphic design, visual identity, and editorial systems.
+        this is rafila famedian's visual archive. a recapitulation of selected processes and projects
+        developed between 2025 and 2026. the collection functions as technical documentation of
+        my practice, focusing on the core disciplines of graphic design, visual identity, and editorial
+        systems.
       </p>
     </div>
 

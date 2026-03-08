@@ -30,9 +30,8 @@
 
     <div class="index-page__footer">
       <p class="index-page__footer-text">
-        a quick directory of all entries works from 2025 to 2026. this section provides
-        direct access to the visual preview and technical documentations within the
-        archive, categorized by core disciplines.
+        a directory of all archive entries from 2025 to 2026. this section provides direct access to
+        visual previews and technical documentations, categorized by core disciplines.
       </p>
     </div>
   </div>
@@ -52,7 +51,7 @@ const projects = [
   { name: 'Atklub', category: 'Social Media Kickstart', year: 2025 },
   { name: 'Stiluso', category: 'Brand Identity', year: 2025 },
   { name: 'Lemarbel', category: 'Brand Identity', year: 2025 },
-  { name: 'Cass Up', category: 'Event Identity', year: 2025 },
+  { name: 'Cass Up!', category: 'Event Identity', year: 2025 },
   { name: 'Umbira', category: 'Visual Identity', year: 2025 },
   { name: 'Dualoque', category: 'Visual Identity', year: 2025 },
   { name: 'Bona', category: 'Visual Identity', year: 2025 },

@@ -18,9 +18,9 @@
 
     <div class="contact__footer">
       <p class="contact__footer-text">
-        acknowledging every individual involved in this creative process. thank
-        you for viewing. i'm always open to hearing new ideas or simply sharing
-        perspectives. let's get in touch!
+        acknowledging every individual involved in this creative process. thank you for navigating
+        through this archive. open for inquiries, collaborative systems, or perspective sharing.
+        available via the links above.
       </p>
     </div>
   </div>
